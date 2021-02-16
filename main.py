@@ -27,5 +27,5 @@ while(True): # Mantém o programa rodando indefinidamente
             download().pl_audio (link, local)
 
     except KeyboardInterrupt:
-        print ('Processo reiniciado! \n')
+        print ('Processo reiniciado ! \n')
         pass

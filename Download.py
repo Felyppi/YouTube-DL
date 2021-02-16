@@ -50,5 +50,4 @@ class download:
             video.streams.filter(only_audio = True).first().download(local)
 
         return print("Download concluído com sucesso!\n\n\n")
-        
 ## FIM DA APLICAÇÃO ##
