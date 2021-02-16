@@ -26,6 +26,10 @@ while(True): # Mantém o programa rodando indefinidamente
         elif (opcao == '4'):
             download().pl_audio (link, local)
 
+
     except KeyboardInterrupt:
         print ('Processo reiniciado ! \n')
+        pass
+    except BaseException:
+        print ('Erro desconhecido! \n')
         pass
