@@ -7,21 +7,51 @@ class download:
 
 
 
+
     # Baixa vídeo
     def video(self, link, local):
         try:
             video = YouTube(link)
             video.streams.first().download(local)
-            return print("Download concluído com sucesso!\n\n\n")
+            return print ("Arquivo salvo em " + local + "\n\n\n")
+        
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
             pass
+        
         except VideoUnavailable:
             print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
             pass
+        
         except BaseException:
             print('Algum erro desconhecido! \n')
             pass
+
+
+
+
+
+    # Baixa playlist de vídeos
+    def pl_video(self, link, local):
+        try:
+            playlist = Playlist(link)
+            for video in playlist.videos:
+                video.streams.first().download(local)
+            return print ("Arquivo salvo em " + local + "\n\n\n")
+        
+        except RegexMatchError:
+            print ('Informe o link corretamente! \n')
+            pass
+        
+        except VideoUnavailable:
+            print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
+            pass
+        
+        except BaseException:
+            print('Algum erro desconhecido! \n')
+            pass
+
+
 
 
 
@@ -31,13 +61,16 @@ class download:
         try:
             video = YouTube(link)
             video.streams.filter(only_audio = True).first().download(local)
-            return print("Download concluído com sucesso!\n\n\n")
+            return print ("Arquivo salvo em " + local + "\n\n\n")
+            
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
             pass
+        
         except VideoUnavailable:
             print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
             pass
+        
         except BaseException:
             print('Algum erro desconhecido! \n')
             pass
@@ -46,38 +79,19 @@ class download:
 
 
         
-        
-    # Baixa playlist de vídeos
-    def pl_video(self, link, local):
-        try:
-            playlist = Playlist(link)
-            for video in playlist.videos:
-                video.streams.first().download(local)
-            return print("Download concluído com sucesso!\n\n\n")
-        except RegexMatchError:
-            print ('Informe o link corretamente! \n')
-            pass
-        except VideoUnavailable:
-            print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
-            pass
-        except BaseException:
-            print('Algum erro desconhecido! \n')
-            pass
-                
-        
-
-
-        
+               
     # Baixa playlist de áudio
     def pl_audio(self, link, local):
         try:
             playlist = Playlist(link)
             for video in playlist.videos:
                 video.streams.filter(only_audio = True).first().download(local)
-            return print("Download concluído com sucesso!\n\n\n")
+            return print ("Arquivo salvo em " + local + "\n\n\n")
+        
         except VideoUnavailable:
             print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
             pass
+        
         except BaseException:
             print('Algum erro desconhecido! \n')
             pass

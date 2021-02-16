@@ -7,8 +7,8 @@ print ("        ####  E-mail: felyppiss@gmail.com       #### \n \n")
 
 while(True): # Mantém o programa rodando indefinidamente
     try:
-        opcao = str(input("1: Vídeo   2: Playlist vídeo   3: Áudio   4: Playlist áudio \n"))
-        link  = str(input("Insira o link do video ou playlist: \n"))
+        opcao = input("1: Vídeo   2: Playlist vídeo   3: Áudio   4: Playlist áudio \n")
+        link  = input("Insira o link do video ou playlist: \n")
 
         usuario = getpass.getuser()
         local   = "C:/Users/" + usuario + "/Desktop"
@@ -30,6 +30,7 @@ while(True): # Mantém o programa rodando indefinidamente
     except KeyboardInterrupt:
         print ('Processo reiniciado ! \n')
         pass
+    
     except BaseException:
-        print ('Erro desconhecido! \n')
+        print ('Erro interno em main.py! \n')
         pass
