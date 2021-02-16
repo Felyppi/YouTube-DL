@@ -7,3 +7,12 @@ Dependências necessárias:
 1) Python 3.9.1  - https://www.python.org/
 
 2) pytube 10.4.1 - https://pypi.org/project/pytube/
+
+Utilização:
+1) Abrir o arquivo main.py após a instalação das dependências necessárias
+
+2) Escolher a opção de 1 a 4 conforme descrito na aplicação
+
+3) Incluir o link do YouTube, sendo este um vídeo ou uma PlayList
+
+4) O arquivo é salvo automaticamente na Área de Trabalho
