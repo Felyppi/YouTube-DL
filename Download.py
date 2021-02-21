@@ -1,19 +1,19 @@
-from pytube import YouTube, Playlist
-from pytube.exceptions import *
+from pytube            import YouTube, Playlist
+from pytube.exceptions import RegexMatchError, VideoUnavailable
+
 
 class download:    
     def __init__(self):
         return
 
-
-
+    
 
     # Baixa vídeo
-    def video(self, link, local):
+    def video(self, link):
         try:
             video = YouTube(link)
-            video.streams.first().download(local)
-            return print ("Arquivo salvo em " + local + "\n\n\n")
+            video.streams.first().download()
+            return print ("Arquivo salvo! \n\n\n")
         
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -32,12 +32,12 @@ class download:
 
 
     # Baixa playlist de vídeos
-    def pl_video(self, link, local):
+    def pl_video(self, link):
         try:
             playlist = Playlist(link)
             for video in playlist.videos:
-                video.streams.first().download(local)
-            return print ("Arquivo salvo em " + local + "\n\n\n")
+                video.streams.first().download()
+            return print ("Arquivo salvo! \n\n\n")
         
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -57,11 +57,11 @@ class download:
 
         
     # Baixa como áudio
-    def audio(self, link, local):
+    def audio(self, link):
         try:
             video = YouTube(link)
-            video.streams.filter(only_audio = True).first().download(local)
-            return print ("Arquivo salvo em " + local + "\n\n\n")
+            video.streams.filter(only_audio = True).first().download()
+            return print ("Arquivo salvo! \n\n\n")
             
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -81,12 +81,12 @@ class download:
         
                
     # Baixa playlist de áudio
-    def pl_audio(self, link, local):
+    def pl_audio(self, link):
         try:
             playlist = Playlist(link)
             for video in playlist.videos:
-                video.streams.filter(only_audio = True).first().download(local)
-            return print ("Arquivo salvo em " + local + "\n\n\n")
+                video.streams.filter(only_audio = True).first().download()
+            return print ("Arquivo salvo! \n\n\n")
         
         except VideoUnavailable:
             print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')

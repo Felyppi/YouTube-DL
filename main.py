@@ -9,22 +9,21 @@ while(True): # Mantém o programa rodando indefinidamente
     try:
         opcao = input("1: Vídeo   2: Playlist vídeo   3: Áudio   4: Playlist áudio \n")
         link  = input("Insira o link do video ou playlist: \n")
+        #usuario = getpass.getuser()
+        #local   = "C:/Users/" + usuario + "/Desktop"
+ 
 
-        usuario = getpass.getuser()
-        local   = "C:/Users/" + usuario + "/Desktop"
-    
-
-        if   (opcao == '1'):
-            download().video    (link, local)
+        if  (opcao == '1'):
+            download().video (link)
 
         elif (opcao == '2'):
-            download().pl_video (link, local)
+            download().pl_video (link)
 
         elif (opcao == '3'):
-            download().audio    (link, local)
+            download().audio (link)
 
         elif (opcao == '4'):
-            download().pl_audio (link, local)
+            download().pl_audio (link)
 
 
     except KeyboardInterrupt:
