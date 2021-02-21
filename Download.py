@@ -12,8 +12,8 @@ class download:
     def video(self, link):
         try:
             video = YouTube(link)
-            video.streams.first().download()
-            return print ("Arquivo salvo! \n\n\n")
+            video.streams.first().download('Download')
+            return print ("Arquivo salvo em Download! \n\n\n")
         
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -36,8 +36,8 @@ class download:
         try:
             playlist = Playlist(link)
             for video in playlist.videos:
-                video.streams.first().download()
-            return print ("Arquivo salvo! \n\n\n")
+                video.streams.first().download('Download')
+            return print ("Arquivo salvo em Download! \n\n\n")
         
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -60,8 +60,8 @@ class download:
     def audio(self, link):
         try:
             video = YouTube(link)
-            video.streams.filter(only_audio = True).first().download()
-            return print ("Arquivo salvo! \n\n\n")
+            video.streams.filter(only_audio = True).first().download('Download')
+            return print ("Arquivo salvo em Download! \n\n\n")
             
         except RegexMatchError:
             print ('Informe o link corretamente! \n')
@@ -85,8 +85,8 @@ class download:
         try:
             playlist = Playlist(link)
             for video in playlist.videos:
-                video.streams.filter(only_audio = True).first().download()
-            return print ("Arquivo salvo! \n\n\n")
+                video.streams.filter(only_audio = True).first().download('Download')
+            return print ("Arquivo salvo em Download! \n\n\n")
         
         except VideoUnavailable:
             print ('Existe algum vídeo indisponível, o mesmo não foi baixado! \n')
