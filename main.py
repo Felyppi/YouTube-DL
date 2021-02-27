@@ -14,13 +14,13 @@ while(True): # Mantém o programa rodando indefinidamente
  
 
         if  (opcao == '1'):
-            download().video (link)
+            download().video    (link)
 
         elif (opcao == '2'):
             download().pl_video (link)
 
         elif (opcao == '3'):
-            download().audio (link)
+            download().audio    (link)
 
         elif (opcao == '4'):
             download().pl_audio (link)
@@ -30,6 +30,6 @@ while(True): # Mantém o programa rodando indefinidamente
         print ('Processo reiniciado ! \n')
         pass
     
-    except BaseException:
-        print ('Erro interno em main.py! \n')
-        pass
+    #except BaseException as err:
+     #   print ('Erro interno em main.py! \n', err)
+      #  pass
