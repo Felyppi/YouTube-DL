@@ -8,7 +8,7 @@ print ("####            E-mail: felyppiss@gmail.com               #### \n\n")
 
 while(True): #Mantém o programa rodando indefinidamente
     try:
-        opcao    = input("Seleciona uma das opções a seguir:\n1: Vídeo   2: Playlist vídeo   3: Áudio   4: Playlist áudio\n")
+        opcao    = input("Selecione uma das opções a seguir:\n1: Vídeo   2: Playlist vídeo   3: Áudio   4: Playlist áudio\n")
         link     = input("Insira o link do video ou playlist: \n")
  
         if  (opcao == '1'):
